@@ -1,0 +1,32 @@
+{
+  "name": "AI Code Dev Environment",
+  "image": "subieslaw/ai-code:latest",
+  "remoteUser": "developer",
+  "workspaceFolder": "/workspace",
+
+  "runArgs": [
+    "--name", "ai-code-dev",
+    "-v", "${localWorkspaceFolder}:/workspace:Z"
+  ],
+
+  "containerEnv": {
+    "OPENROUTER_API_KEY": "${localEnv:OPENROUTER_API_KEY}"
+  },
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/bin/python3"
+      },
+      "extensions": [
+        "anthropic.claude-code",
+        "saoudrizwan.claude-dev",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.debugpy",
+        "ms-python.black-formatter",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}
