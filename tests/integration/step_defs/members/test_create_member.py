@@ -23,7 +23,7 @@ async def create_member_response(client):
             "name": "Alice Smith",
             "email": "alice@example.com",
             "role": "Backend Engineer",
-            "team": "Platform",
+            "team_id": None,
         },
     )
 
