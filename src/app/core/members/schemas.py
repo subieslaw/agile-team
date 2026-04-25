@@ -5,7 +5,7 @@ class TeamMemberCreate(BaseModel):
     name: str = Field(..., min_length=1, max_length=255)
     email: EmailStr
     role: str | None = Field(None, max_length=100)
-    team: str | None = Field(None, max_length=100)
+    team_id: str | None = None
 
 
 class TeamMemberRead(BaseModel):
@@ -13,7 +13,7 @@ class TeamMemberRead(BaseModel):
     name: str
     email: str
     role: str | None
-    team: str | None
+    team_id: str | None
     is_active: bool
 
     model_config = {"from_attributes": True}
