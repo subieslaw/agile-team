@@ -61,9 +61,7 @@ def existing_member(member):
 
 @pytest.fixture
 async def assign_response(client, existing_team, existing_member):
-    return await client.post(
-        f"/api/v1/teams/{existing_team['id']}/members/{existing_member['id']}"
-    )
+    return await client.post(f"/api/v1/teams/{existing_team['id']}/members/{existing_member['id']}")
 
 
 @given("the member is assigned to the team", target_fixture="assignment")
