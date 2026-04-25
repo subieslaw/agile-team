@@ -19,10 +19,11 @@ type: project
 - **REST API** `src/app/api/v1/endpoints/teams.py` — 8 endpoints:
   - `POST/GET /teams`, `GET/PATCH/DELETE /teams/{id}`
   - `POST/DELETE /teams/{id}/members/{member_id}`, `GET /teams/{id}/members`
-- **Migration** `migrations/versions/a1b2c3d4e5f6_add_teams_table.py`: creates `teams` table, drops `team_members.team` string, adds `team_members.team_id` FK
+- **Migration** `migrations/versions/b7e3f1a92c04_add_teams_table.py`: creates `teams` table, drops `team_members.team` string, adds `team_members.team_id` FK
 - **BDD tests** `tests/integration/features/teams/` + `tests/integration/step_defs/teams/`: 13 scenarios, all passing
 - **Breaking change**: `TeamMember.team` (String) replaced by `TeamMember.team_id` (FK → teams.id)
 - All 38 tests pass
+- PR #1 merged — all CI checks green (Lint, Test, Build & push Docker image)
 
 ### Infrastructure
 - CLAUDE.md updated with full project state and structure
@@ -43,3 +44,6 @@ The `Team` model stays lean — adding a new concept = new table + new FK, no sc
 
 **Why:** Team is the core entity of the `agile-team` domain per CLAUDE.md.
 **How to apply:** Next session can pick up from "Not yet implemented" above. Read CLAUDE.md first.
+
+## Next session topic
+Plan UX and UI for the developed REST API.
